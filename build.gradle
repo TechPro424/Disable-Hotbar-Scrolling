@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.1-SNAPSHOT'
 	id 'maven-publish'
+	id "com.modrinth.minotaur" version "2.+"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -45,6 +46,12 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	modApi include("maven.modrinth:mixintrace:1.1.1+1.17")
+}
+
+modrinth {
+	token = System.getenv("MODRINTH_TOKEN")
+	projectId = "disable-hotbar-scrolling"
+    syncBodyFrom = rootProject.file("README.md").text
 }
 
 processResources {
