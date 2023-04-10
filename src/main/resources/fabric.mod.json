@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "disable-hotbar-scrolling",
+  "version": "${version}",
+
+  "name": "Disable Hotbar Scrolling",
+  "description": "A simple mod to disable scrolling in the hotbar.",
+  "authors": [
+    "TechPro424"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "GNU Lesser General Public License v3.0 or later",
+  "icon": "assets/disablehotbarscrolling/icon.png",
+  "environment": "client",
+  "mixins": [
+    "disablehotbarscrolling.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "minecraft": ">=1.19.2",
+    "java": ">=17"
+  },
+  "recommends": {
+    "mixintrace": "*"
+  },
+  "suggests": {
+    "mixintrace": "*"
+  }
+}
