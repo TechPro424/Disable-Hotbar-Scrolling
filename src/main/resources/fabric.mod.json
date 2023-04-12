@@ -13,7 +13,7 @@
     "sources": ""
   },
 
-  "license": "GNU Lesser General Public License v3.0 or later",
+  "license": "GNU Lesser General Public License v3.0 only",
   "icon": "assets/disablehotbarscrolling/icon.png",
   "environment": "client",
   "mixins": [
