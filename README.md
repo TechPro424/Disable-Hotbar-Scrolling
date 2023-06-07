@@ -16,4 +16,6 @@ This mod primarily targets people in the PvP community and others who wish to ge
  - I'm truly grateful to [Devin](https://modrinth.com/user/Devin) for making an extremely high-quality icon for this mod on short notice.
  - Thanks a lot to the Fabric community on [Discord](https://discord.gg/v6v4pMv) and [GitHub Discussions](https://github.com/orgs/FabricMC/discussions) and to [Kaupenjoe's community on Discord](https://url.kaupenjoe.net/discord) for helping me out with the various issues I had when making this mod and tolerating my stupid mistakes. 
 
+**You may freely use this mod in any modpack, as long as the download remains hosted within the Modrinth ecosystem.**
+
 <!-- How to add new lines in Readme: https://stackoverflow.com/questions/24575680/new-lines-inside-paragraph-in-readme-md -->
