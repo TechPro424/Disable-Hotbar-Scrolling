@@ -1,14 +1,64 @@
 plugins {
 	id 'fabric-loom' version '1.10-SNAPSHOT'
 	id 'maven-publish'
-	id "com.modrinth.minotaur" version "2.+"
-	id "co.uzzu.dotenv.gradle" version "2.0.0"
+	id "me.modmuss50.mod-publish-plugin" version "2.1.1"
 }
+
+publishMods {
+    changelog = providers.fileContents(layout.projectDirectory.file("CHANGELOG.md")).asText
+    type = STABLE
+	file = jar.archiveFile
+    modLoaders.add("fabric")
+
+
+
+//	minecraftVersionRange {
+//            start = "1.19.4"
+//            end = "1.20.2" // Set to "latest" or "latestRelease" to use the latest Minecraft release
+//
+//        }
+
+	 modrinth {
+		accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+		projectDescription = providers.fileContents(layout.projectDirectory.file("README.md")).asText
+		projectId = "wmVGLWK1"
+		environment = CLIENT_ONLY
+		displayName = "${mod_version}"
+		version = "${mod_version}"
+		 minecraftVersionList("${minecraft_version}")
+	}
+
+//	curseforge {
+//		accessToken = providers.environmentVariable("CF_API_KEY")
+//		minecraftVersionList("${minecraft_version}")
+//		projectId = "1615155"
+//		javaVersions.add(JavaVersion.VERSION_25)
+//		client = true
+//		changelogType = "markdown"
+//
+//	}
+
+	github {
+        accessToken = providers.environmentVariable("GITHUB_TOKEN")
+        repository = "TechPro424/Disable-Hotbar-Scrolling"
+        commitish = "master" // This is the branch the release tag will be created from
+		tagName = "v${mod_version}"
+		displayName = "v${mod_version}"
+    }
+
+}
+
+
+base {
+	archivesName = project.archives_base_name
+}
+
+
 
 sourceCompatibility = JavaVersion.VERSION_21
 targetCompatibility = JavaVersion.VERSION_21
 
-archivesBaseName = project.archives_base_name
+
 version = project.mod_version
 group = project.maven_group
 
@@ -49,23 +99,26 @@ dependencies {
 	modApi include("maven.modrinth:mixintrace:1.1.1+1.17")
 }
 
-modrinth {
-	token = env.fetch("MODRINTH_TOKEN")
-	projectId = "disable-hotbar-scrolling"
-    syncBodyFrom = rootProject.file("README.md").text
-}
-
 processResources {
-	inputs.property "version", project.version
+//	def version = project.version
+//	inputs.property "version", project.version
 
+	//	filesMatching("fabric.mod.json") {
+//		expand "version": version
+//  }
+
+	var properties = [
+			"version"           : version,
+			"loader_version"    : loader_version,
+			"fabric_api_version": fabric_api_version,
+			"minecraft_version" : minecraft_version
+	]
+
+	inputs.properties properties
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		filteringCharset = "UTF-8"
+		expand properties
 	}
-}
-
-tasks.withType(JavaCompile).configureEach {
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
 }
 
 java {
@@ -76,8 +129,10 @@ java {
 }
 
 jar {
+	inputs.property "archivesName", base.archivesName
+
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_${inputs.properties.archivesName}"}
 	}
 }
 
