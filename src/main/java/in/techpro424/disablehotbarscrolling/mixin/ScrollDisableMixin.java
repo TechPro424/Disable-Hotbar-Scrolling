@@ -5,12 +5,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.client.Mouse;
+import net.minecraft.client.MouseHandler;
 
-@Mixin(Mouse.class)
+@Mixin(MouseHandler.class)
 public abstract class ScrollDisableMixin {
 
-    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;setSelectedSlot(I)V"), method = "Lnet/minecraft/client/Mouse;onMouseScroll(JDD)V", cancellable = true)
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"), method = "onScroll(JDD)V", cancellable = true)
     private void disableScrolling(long window, double horizontal, double vertical, CallbackInfo callbackInfo) {
         callbackInfo.cancel();
     }
