@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'fabric-loom' version '1.17.12'
 	id 'maven-publish'
 	id "me.modmuss50.mod-publish-plugin" version "2.1.1"
 }
@@ -9,8 +9,6 @@ publishMods {
     type = STABLE
 	file = jar.archiveFile
     modLoaders.add("fabric")
-
-
 
 //	minecraftVersionRange {
 //            start = "1.19.4"
@@ -48,16 +46,9 @@ publishMods {
 
 }
 
-
 base {
 	archivesName = project.archives_base_name
 }
-
-
-
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
-
 
 version = project.mod_version
 group = project.maven_group
@@ -121,7 +112,14 @@ processResources {
 	}
 }
 
+tasks.withType(JavaCompile).configureEach {
+	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
+	it.options.release = 21
+}
+
 java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
 	// If you remove this line, sources will not be generated.
