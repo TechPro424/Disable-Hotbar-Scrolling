@@ -11,7 +11,7 @@ import net.minecraft.client.MouseHandler;
 public abstract class ScrollDisableMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"), method = "onScroll(JDD)V", cancellable = true)
-    private void disableScrolling(long window, double horizontal, double vertical, CallbackInfo callbackInfo) {
+    private void disableScrolling(long handle, double xoffset, double yoffset, CallbackInfo callbackInfo) {
         callbackInfo.cancel();
     }
 
