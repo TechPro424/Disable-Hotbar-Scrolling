@@ -12,7 +12,7 @@ Disable Hotbar Scrolling is a simple mod, which, as the name suggests, is used t
 This mod primarily targets people in the PvP community and others who wish to get familiar with their keybinds. The logic behind this mod is as follows: If you can't scroll in the hotbar, the only way you can use the different items equipped in it is to utilize your keybinds.
 
 The 1.8.9 verion of the mod runs of [Legacy Fabric 1.8.9](https://legacyfabric.net/), as the original Fabric loader does not support 1.8.9.
-The 1.20 version of the mod officially supports all Minecraft versions from 1.19.2 to 1.20, but should work on almost all earlier and future versions of Minecraft supported by the original Fabric loader.
+The 1.20 version of the mod officially supports all Minecraft versions from 1.19.2 to 1.20.
 
 **(Versions of the mod for Minecraft < 1.21.x can be found on the mod's [Modrinth page](https://modrinth.com/mod/disable-hotbar-scrolling).)**
 
