@@ -26,15 +26,15 @@ publishMods {
 		 minecraftVersionList("${minecraft_version}")
 	}
 
-//	curseforge {
-//		accessToken = providers.environmentVariable("CF_API_KEY")
-//		minecraftVersionList("${minecraft_version}")
-//		projectId = "1620961"
-//		javaVersions.add(JavaVersion.VERSION_25)
-//		client = true
-//		changelogType = "markdown"
-//
-//	}
+	curseforge {
+		accessToken = providers.environmentVariable("CF_API_KEY")
+		minecraftVersionList("${minecraft_version}")
+		projectId = "1620961"
+		javaVersions.add(JavaVersion.VERSION_25)
+		client = true
+		changelogType = "markdown"
+
+	}
 
 	github {
         accessToken = providers.environmentVariable("GITHUB_TOKEN")

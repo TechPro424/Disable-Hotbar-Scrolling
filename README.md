@@ -1,5 +1,6 @@
 ![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_vector.svg)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/disable-hotbar-scrolling)
+[![curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg)](https://www.curseforge.com/projects/1620961)
 [![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/TechPro424/Disable-Hotbar-Scrolling)
 ![java](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/java_vector.svg)
 <!-- ![discord-plural](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg) -->
@@ -21,6 +22,6 @@ The 1.20 version of the mod officially supports all Minecraft versions from 1.19
  - I'm truly grateful to [Devin](https://modrinth.com/user/Devin) for making an extremely high-quality icon for this mod on short notice.
  - Thanks a lot to the Fabric community on [Discord](https://discord.gg/v6v4pMv) and [GitHub Discussions](https://github.com/orgs/FabricMC/discussions) and to [Kaupenjoe's community on Discord](https://url.kaupenjoe.net/discord) for helping me out with the various issues I had when making this mod and tolerating my stupid mistakes. 
 
-**You may freely use this mod in any modpack, as long as the download remains hosted within the Modrinth ecosystem.**
+**You may freely use this mod in any modpack, as long as the download remains hosted within the CurseForge and Modrinth ecosystems.**
 
 <!-- How to add new lines in Readme: https://stackoverflow.com/questions/24575680/new-lines-inside-paragraph-in-readme-md -->
